@@ -9,34 +9,38 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            TitleView()
-            Buttons()
+        NavigationView {
+            VStack {
+                TitleView()
+                Buttons()
+            }
         }
     }
 }
 
 struct TitleView: View {
     var body: some View {
-        Text("Welcome to Memorize")
-            .fontWeight(.bold)
-            .font(.system(size: 24))
-        Text("A memory training game")
-            .padding(.bottom, 32)
+        VStack {
+            Text("Welcome to Memorize")
+                .fontWeight(.bold)
+                .font(.system(size: 24))
+            Text("A memory training game")
+        }
+        .padding(.bottom, 32)
     }
 }
 
 struct Buttons: View {
     var body: some View {
-        Button("Start game", action: {
+        VStack(spacing: 24) {
+            NavigationLink(destination: GameView()) {
+                Text("Start game")
+            }
             
-        })
-        .padding()
-        
-        Button("Settings", action: {
-            
-        })
-        .padding()
+            NavigationLink(destination: SettingsView()) {
+                Text("Settings")
+            }
+        }
     }
 }
 
