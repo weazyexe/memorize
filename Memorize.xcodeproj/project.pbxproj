@@ -52,8 +52,10 @@
 		76E1EE88257E804C00B3E9C5 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				76E1EE9B257E812600B3E9C5 /* Game */,
+				76E1EE9A257E812000B3E9C5 /* Settings */,
+				76E1EE99257E811400B3E9C5 /* Main */,
 				76E1EE89257E804C00B3E9C5 /* MemorizeApp.swift */,
-				76E1EE8B257E804C00B3E9C5 /* ContentView.swift */,
 				76E1EE8D257E804F00B3E9C5 /* Assets.xcassets */,
 				76E1EE92257E804F00B3E9C5 /* Info.plist */,
 				76E1EE8F257E804F00B3E9C5 /* Preview Content */,
@@ -67,6 +69,28 @@
 				76E1EE90257E804F00B3E9C5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76E1EE99257E811400B3E9C5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				76E1EE8B257E804C00B3E9C5 /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		76E1EE9A257E812000B3E9C5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		76E1EE9B257E812600B3E9C5 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
