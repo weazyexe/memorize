@@ -11,4 +11,5 @@ struct Card: Identifiable {
     var id = UUID()
     var emoji: String = "👀"
     var isFaceUp: Bool = false
+    var freeze: Bool = false
 }
