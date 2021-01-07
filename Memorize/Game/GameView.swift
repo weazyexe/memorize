@@ -12,6 +12,8 @@ struct GameView: View {
     @ObservedObject
     var viewModel = GameViewModel()
     
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     var body: some View {
         Grid(viewModel.cards) { card in
             CardView(card: card).onTapGesture {
@@ -20,7 +22,19 @@ struct GameView: View {
             .padding(5)
         }
         .onAppear(perform: {
-            viewModel.generateCards()
+            viewModel.initializeGame()
+        })
+        .alert(isPresented: $viewModel.win, content: {
+            Alert(
+                title: Text("Winner winner"),
+                message: Text("Chicken dinner"),
+                primaryButton: .default(Text("Restart")) {
+                    viewModel.initializeGame()
+                },
+                secondaryButton: .cancel(Text("Back")) {
+                    mode.wrappedValue.dismiss()
+                }
+            )
         })
         .foregroundColor(Color.orange)
         .padding()
