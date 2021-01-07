@@ -15,29 +15,34 @@ struct GameView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
-        Grid(viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                viewModel.onTap(card: card)
-            }
-            .padding(5)
-        }
-        .onAppear(perform: {
-            viewModel.initializeGame()
-        })
-        .alert(isPresented: $viewModel.win, content: {
-            Alert(
-                title: Text("Winner winner"),
-                message: Text("Chicken dinner"),
-                primaryButton: .default(Text("Restart")) {
-                    viewModel.initializeGame()
-                },
-                secondaryButton: .cancel(Text("Back")) {
-                    mode.wrappedValue.dismiss()
+        VStack {
+            Text("Score: \(viewModel.score)")
+                .padding()
+            
+            Grid(viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                    viewModel.onTap(card: card)
                 }
-            )
-        })
-        .foregroundColor(Color.orange)
-        .padding()
+                .padding(5)
+            }
+            .onAppear(perform: {
+                viewModel.initializeGame()
+            })
+            .alert(isPresented: $viewModel.win, content: {
+                Alert(
+                    title: Text("Winner winner"),
+                    message: Text("Chicken dinner"),
+                    primaryButton: .default(Text("Restart")) {
+                        viewModel.initializeGame()
+                    },
+                    secondaryButton: .cancel(Text("Back")) {
+                        mode.wrappedValue.dismiss()
+                    }
+                )
+            })
+            .foregroundColor(Color.orange)
+            .padding()
+        }
     }
 }
 

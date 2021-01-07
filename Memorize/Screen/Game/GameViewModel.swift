@@ -13,6 +13,9 @@ class GameViewModel: ObservableObject {
     private(set) var cards: [Card] = []
     
     @Published
+    private(set) var score: Int = 0
+    
+    @Published
     var win = false
 
     private var game: MemorizeGame? = nil
@@ -21,19 +24,20 @@ class GameViewModel: ObservableObject {
         win = false
         game = MemorizeGame()
         game?.onWinAction = onWin
-        updateCards()
+        updateView()
     }
     
     func onTap(card: Card) {
         game?.showCard(card: card)
-        updateCards()
+        updateView()
     }
     
     func onWin() {
         win = true
     }
     
-    private func updateCards() {
+    private func updateView() {
         cards = game?.cards ?? []
+        score = game?.score ?? 0
     }
 }

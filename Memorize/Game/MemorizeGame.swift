@@ -11,6 +11,8 @@ class MemorizeGame {
     
     var onWinAction: () -> Void = {}
     
+    var score: Int = 0
+    
     private(set) var cards: [Card] = []
     
     private var openedCardsCount: Int = 0
@@ -63,7 +65,9 @@ class MemorizeGame {
     private func faceCardUp(card: Card) {
         let position = cards.firstIndex(matching: card)!
         var tappedCard = cards[position]
+        
         tappedCard.isFaceUp = !tappedCard.isFaceUp
+        
         cards[position] = tappedCard
     }
     
@@ -73,13 +77,30 @@ class MemorizeGame {
         let firstIndex = cards.firstIndex(matching: openedCards[0])!
         let secondIndex = cards.firstIndex(matching: openedCards[1])!
         
-        if (cards[firstIndex].emoji == cards[secondIndex].emoji) {
+        if cards[firstIndex].emoji == cards[secondIndex].emoji {
             cards[firstIndex].freeze = true
             cards[secondIndex].freeze = true
+            score += 2
+        } else {
+            decrementScore(
+                firstIndex: firstIndex,
+                secondIndex: secondIndex
+            )
         }
+        
+        cards[firstIndex].showed = true
+        cards[secondIndex].showed = true
     }
     
     private func checkWin() -> Bool {
         return cards.allSatisfy { $0.freeze }
+    }
+    
+    private func decrementScore(firstIndex: Int, secondIndex: Int) {
+        if cards[firstIndex].showed && cards[secondIndex].showed {
+            score -= 2
+        } else if cards[firstIndex].showed || cards[secondIndex].showed {
+            score -= 1
+        }
     }
 }

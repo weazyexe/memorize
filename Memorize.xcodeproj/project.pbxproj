@@ -70,12 +70,12 @@
 		76E1EE88257E804C00B3E9C5 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				76EE85A225A7150C00E1DEDF /* Game */,
 				76EE859D25A7133B00E1DEDF /* Util */,
 				76EE859C25A7132F00E1DEDF /* Domain */,
 				76EE859B25A7131500E1DEDF /* Common */,
 				76EE859A25A712F700E1DEDF /* Screen */,
 				76E1EE89257E804C00B3E9C5 /* MemorizeApp.swift */,
-				76EE859625A70B7000E1DEDF /* MemorizeGame.swift */,
 				76E1EE8D257E804F00B3E9C5 /* Assets.xcassets */,
 				76E1EE92257E804F00B3E9C5 /* Info.plist */,
 				76E1EE8F257E804F00B3E9C5 /* Preview Content */,
@@ -150,6 +150,14 @@
 				76EE859F25A7136600E1DEDF /* ArrayExtensions.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		76EE85A225A7150C00E1DEDF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				76EE859625A70B7000E1DEDF /* MemorizeGame.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
