@@ -18,6 +18,7 @@ class GameViewModel: ObservableObject {
     private var openedCardsCount: Int = 0
     
     func generateCards() {
+        self.win = false
         let cardsCount = Int.random(in: PAIRS_COUNT_RANGE)
         var cards: [Card] = []
         
@@ -32,27 +33,22 @@ class GameViewModel: ObservableObject {
     
     func onTap(card: Card) {
         if (!card.freeze) {
+            if openedCardsCount == 0 {
+                hideNotFreezedCards()
+            }
+            
+            showCard(card: card)
+            openedCardsCount += 1
+            
             if openedCardsCount == 2 {
                 checkOpenedCards()
                 
                 if checkWin() {
                     self.win = true
-                } else {
-                    for i in 0..<(cards.count) {
-                        if (!cards[i].freeze) {
-                            cards[i].isFaceUp = false
-                        }
-                    }
                 }
+                
                 openedCardsCount = 0
             }
-            
-            let position = cards.firstIndex(where: { $0.id == card.id })!
-            var tappedCard = cards[position]
-            tappedCard.isFaceUp = !tappedCard.isFaceUp
-            cards[position] = tappedCard
-            
-            openedCardsCount += 1
         }
     }
     
@@ -70,5 +66,20 @@ class GameViewModel: ObservableObject {
     
     private func checkWin() -> Bool {
         return cards.allSatisfy { $0.freeze }
+    }
+    
+    private func showCard(card: Card) {
+        let position = cards.firstIndex(where: { $0.id == card.id })!
+        var tappedCard = cards[position]
+        tappedCard.isFaceUp = !tappedCard.isFaceUp
+        cards[position] = tappedCard
+    }
+    
+    private func hideNotFreezedCards() {
+        for i in 0..<(cards.count) {
+            if (!cards[i].freeze) {
+                cards[i].isFaceUp = false
+            }
+        }
     }
 }
