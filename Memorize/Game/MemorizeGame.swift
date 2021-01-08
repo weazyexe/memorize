@@ -48,7 +48,7 @@ class MemorizeGame {
         
         for _ in 0..<2 {
             for j in 0..<(cardsCount) {
-                cards.append(Card(emoji: CARD_EMOJIS[j]))
+                cards.append(Card(emoji: ThemeSettings.theme.emojis[j]))
             }
         }
         return cards

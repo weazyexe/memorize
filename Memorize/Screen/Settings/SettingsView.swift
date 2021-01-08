@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @State private var themeId = ThemeSettings.theme.id
+    
+    private let viewModel = SettingsViewModel()
+    
     var body: some View {
-        Text("Settings")
+        Text("Theme")
+        Picker(selection: $themeId, label: Text("Theme")) {
+            Text("Red").tag(0)
+            Text("Orange").tag(1)
+            Text("Blue").tag(2)
+        }
+        .onChange(of: themeId) {
+            viewModel.setTheme(theme: ThemeSettings.themeById(id: $0))
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
     }
 }
 

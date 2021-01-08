@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7674BD6F25A71985004786D3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674BD6E25A71985004786D3 /* Theme.swift */; };
+		760AC40E25A8644B00F7C225 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760AC40D25A8644B00F7C225 /* SettingsViewModel.swift */; };
+		7674BD6F25A71985004786D3 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674BD6E25A71985004786D3 /* ThemeSettings.swift */; };
+		76B8C16325A85F7E008843EC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8C16225A85F7E008843EC /* Theme.swift */; };
 		76E1EE8A257E804C00B3E9C5 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1EE89257E804C00B3E9C5 /* MemorizeApp.swift */; };
 		76E1EE8C257E804C00B3E9C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1EE8B257E804C00B3E9C5 /* ContentView.swift */; };
 		76E1EE8E257E804F00B3E9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E1EE8D257E804F00B3E9C5 /* Assets.xcassets */; };
@@ -24,7 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7674BD6E25A71985004786D3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		760AC40D25A8644B00F7C225 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7674BD6E25A71985004786D3 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
+		76B8C16225A85F7E008843EC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		76E1EE86257E804C00B3E9C5 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E1EE89257E804C00B3E9C5 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		76E1EE8B257E804C00B3E9C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				76EFC5CC257E83A600B2D55E /* SettingsView.swift */,
+				760AC40D25A8644B00F7C225 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -133,7 +138,7 @@
 			children = (
 				76F680C025A5C36E0099FD28 /* Grid.swift */,
 				76F680BD25A5C2EA0099FD28 /* GridLayout.swift */,
-				7674BD6E25A71985004786D3 /* Theme.swift */,
+				7674BD6E25A71985004786D3 /* ThemeSettings.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				76F680B825A5BC0D0099FD28 /* Card.swift */,
+				76B8C16225A85F7E008843EC /* Theme.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				76E1EE8C257E804C00B3E9C5 /* ContentView.swift in Sources */,
 				76F680B925A5BC0D0099FD28 /* Card.swift in Sources */,
 				76EE859725A70B7000E1DEDF /* MemorizeGame.swift in Sources */,
+				76B8C16325A85F7E008843EC /* Theme.swift in Sources */,
 				76EFC5D0257E888A00B2D55E /* GameView.swift in Sources */,
 				76EE85A025A7136600E1DEDF /* ArrayExtensions.swift in Sources */,
 				76F680B325A5BAAF0099FD28 /* GameViewModel.swift in Sources */,
@@ -243,7 +250,8 @@
 				76F680B625A5BB1C0099FD28 /* Const.swift in Sources */,
 				76F680BE25A5C2EA0099FD28 /* GridLayout.swift in Sources */,
 				76F680C125A5C36E0099FD28 /* Grid.swift in Sources */,
-				7674BD6F25A71985004786D3 /* Theme.swift in Sources */,
+				7674BD6F25A71985004786D3 /* ThemeSettings.swift in Sources */,
+				760AC40E25A8644B00F7C225 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

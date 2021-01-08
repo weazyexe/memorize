@@ -57,10 +57,11 @@ struct CardView: View {
         ZStack {
             if card.isFaceUp {
                 RoundedRectangle (cornerRadius: cornerRadius).fill(Color.white)
-                RoundedRectangle (cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+                RoundedRectangle (cornerRadius: cornerRadius)
+                    .strokeBorder(ThemeSettings.theme.primaryColor, lineWidth: edgeLineWidth)
                 Text(card.emoji)
             } else {
-                RoundedRectangle (cornerRadius: cornerRadius).fill()
+                RoundedRectangle (cornerRadius: cornerRadius).fill(ThemeSettings.theme.primaryColor)
             }
         }
     }
