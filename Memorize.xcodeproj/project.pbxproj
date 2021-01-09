@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		760AC40E25A8644B00F7C225 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760AC40D25A8644B00F7C225 /* SettingsViewModel.swift */; };
+		763B427D25A9C3F800DDFB14 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B427C25A9C3F800DDFB14 /* Pie.swift */; };
 		7674BD6F25A71985004786D3 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674BD6E25A71985004786D3 /* ThemeSettings.swift */; };
 		76B8C16325A85F7E008843EC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8C16225A85F7E008843EC /* Theme.swift */; };
 		76E1EE8A257E804C00B3E9C5 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E1EE89257E804C00B3E9C5 /* MemorizeApp.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		760AC40D25A8644B00F7C225 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		763B427C25A9C3F800DDFB14 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		7674BD6E25A71985004786D3 /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		76B8C16225A85F7E008843EC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		76E1EE86257E804C00B3E9C5 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				76F680C025A5C36E0099FD28 /* Grid.swift */,
 				76F680BD25A5C2EA0099FD28 /* GridLayout.swift */,
 				7674BD6E25A71985004786D3 /* ThemeSettings.swift */,
+				763B427C25A9C3F800DDFB14 /* Pie.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763B427D25A9C3F800DDFB14 /* Pie.swift in Sources */,
 				76EFC5CD257E83A600B2D55E /* SettingsView.swift in Sources */,
 				76E1EE8C257E804C00B3E9C5 /* ContentView.swift in Sources */,
 				76F680B925A5BC0D0099FD28 /* Card.swift in Sources */,

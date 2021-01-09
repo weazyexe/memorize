@@ -9,11 +9,7 @@ import Foundation
 
 class SettingsViewModel: ObservableObject {
     
-    @Published
-    private(set) var currentTheme: Theme = ThemeSettings.theme
-    
     func setTheme(theme: Theme) {
         ThemeSettings.theme = theme
-        currentTheme = theme
     }
 }

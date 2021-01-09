@@ -12,10 +12,12 @@ struct GameView: View {
     @ObservedObject
     var viewModel = GameViewModel()
     
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @Environment(\.presentationMode)
+    var mode: Binding<PresentationMode>
     
     var body: some View {
         VStack {
+            Text("Theme: \(ThemeSettings.theme.name)")
             Text("Score: \(viewModel.score)")
                 .padding()
             
@@ -56,9 +58,20 @@ struct CardView: View {
     var body: some View {
         ZStack {
             if card.isFaceUp {
-                RoundedRectangle (cornerRadius: cornerRadius).fill(Color.white)
+                RoundedRectangle (cornerRadius: cornerRadius)
+                    .fill(Color.white)
                 RoundedRectangle (cornerRadius: cornerRadius)
                     .strokeBorder(ThemeSettings.theme.primaryColor, lineWidth: edgeLineWidth)
+                
+                Pie(
+                    startAngle: Angle.degrees(0 - 90),
+                    endAngle: Angle.degrees(110 - 90),
+                    clockwise: true
+                )
+                .fill(ThemeSettings.theme.secondaryColor)
+                .padding(5)
+                .opacity(0.4)
+                
                 Text(card.emoji)
             } else {
                 RoundedRectangle (cornerRadius: cornerRadius).fill(ThemeSettings.theme.primaryColor)
